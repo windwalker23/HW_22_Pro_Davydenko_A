@@ -1,4 +1,4 @@
-function getResponse(action, callback) {
+function getResponse(action) {
     let xml = new XMLHttpRequest();
     xml.open("GET", action, false);
     xml.send();
