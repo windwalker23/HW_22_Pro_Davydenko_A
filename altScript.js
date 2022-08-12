@@ -1,15 +1,19 @@
+function getResponse(action, callback) {
+    let xml = new XMLHttpRequest();
+    xml.open("GET", action, false);
+    xml.send();
+
+    children.push(...JSON.parse(xml.response).children);
+}
+
+function setArray(jsonArr) {
+    children.push(...jsonArr);
+}
+
+let data = ["data.json", "data2.json"]
+
 const children = [];
 
-let xml = new XMLHttpRequest();
-xml.open("GET", "data.json", false);
-xml.send();
-
-children.push(...JSON.parse(xml.response).children);
-
-let xml1 = new XMLHttpRequest();
-xml1.open("GET", "data2.json", false);
-xml1.send();
-
-children.push(...JSON.parse(xml1.response).children);
+data.forEach(item => getResponse(item, setArray));
 
 console.log(children);
