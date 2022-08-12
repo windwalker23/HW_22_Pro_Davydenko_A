@@ -6,10 +6,6 @@ function getResponse(action, callback) {
     children.push(...JSON.parse(xml.response).children);
 }
 
-function setArray(jsonArr) {
-    children.push(...jsonArr);
-}
-
 let data = ["data.json", "data2.json"]
 
 const children = [];
