@@ -10,6 +10,6 @@ let data = ["data.json", "data2.json"]
 
 const children = [];
 
-data.forEach(item => getResponse(item, setArray));
+data.forEach(item => getResponse(item));
 
 console.log(children);
